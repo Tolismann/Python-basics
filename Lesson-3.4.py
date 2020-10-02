@@ -7,6 +7,22 @@
 # Первый — возведение в степень с помощью оператора **.
 # Второй — более сложная реализация без оператора **, предусматривающая использование цикла.
 
+# вариант 1
 def my_func(x, y):
     return x ** y
-print(my_func(2, -1))
+print(my_func(5.5, -5))
+
+# вариант 2
+def x_exponent_y(float_x, negative_int_y):
+    if (isinstance(float_x, float)) and (isinstance(negative_int_y, int)):
+        if (float_x > 0) and (negative_int_y < 0):
+            result = 1
+            for i in range(0, abs(negative_int_y)):
+                result = result * (1/float_x)
+            return result
+    else:
+        return None
+
+
+r = x_exponent_y(5.5, -5)
+print(r)
